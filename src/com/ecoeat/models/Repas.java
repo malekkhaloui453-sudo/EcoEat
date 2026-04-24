@@ -31,6 +31,10 @@ public class Repas {
         this.disponible = disponible;
     }
 
+    public void setQuantiteStock(int quantiteStock) {
+        this.quantiteStock = quantiteStock;
+    }
+
     // Méthode d'affichage pour la démo console [cite: 182, 194]
     public void afficherRepas() {
         System.out.println("Repas : " + nom + " | Prix : " + prix + " DT | Disponible : " + (disponible ? "Oui" : "Non"));

@@ -1,0 +1,19 @@
+@startuml
+left to right direction
+skinparam actorStyle awesome
+
+actor "Étudiant" as ET
+actor "Administrateur" as AD
+
+package "Système EcoEat" {
+  usecase "Effectuer une Réservation" as UC1
+  usecase "Consulter l'Historique" as UC2
+  usecase "Gérer les Utilisateurs" as UC3
+  usecase "Consulter les Statistiques (Dashboard)" as UC4
+}
+
+ET --> UC1
+ET --> UC2
+AD --> UC3
+AD --> UC4
+@enduml

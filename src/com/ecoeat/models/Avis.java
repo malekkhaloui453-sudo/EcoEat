@@ -7,6 +7,7 @@ import java.time.format.DateTimeFormatter;
  * Avis.java - Classe représentant un avis/review dans le système EcoEat
  * Encapsule les informations d'un avis laissé par un étudiant sur un repas
  */
+
 public class Avis {
     // Champs privés (Encapsulation)
     private int idAvis;

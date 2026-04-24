@@ -10,13 +10,15 @@ public class Repas {
     private String description;
     private double prix;
     private boolean disponible;
+    private int quantiteStock;
 
     // Constructeur complet [cite: 178]
-    public Repas(String nom, String description, double prix) {
+    public Repas(String nom, String description, double prix, int quantiteStock) {
         this.nom = nom;
         this.description = description;
         this.prix = prix;
         this.disponible = true; // Par défaut disponible
+        this.quantiteStock = quantiteStock;
     }
 
     // Méthode métier pour vérifier la disponibilité [cite: 181, 183]
@@ -39,4 +41,5 @@ public class Repas {
     public String getNom() { return nom; }
     public double getPrix() { return prix; }
     public String getDescription() { return description; }
+    public int getQuantiteStock() { return quantiteStock; }
 }

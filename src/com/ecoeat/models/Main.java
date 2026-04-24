@@ -12,14 +12,24 @@ public class Main {
         Etudiant etudiant1 = new Etudiant("Ahmed Ben Ali", "ahmed@etudiant.tn", 20.0);
 
         // 2. Instanciation d'un repas
-        Repas repas1 = new Repas("Couscous Tunisien", "Plat traditionnel tunisien avec légumes et viande", 12.0);
+        Repas repas1 = new Repas("Couscous Tunisien", "Plat traditionnel tunisien avec légumes et viande", 12.0, 10);
 
-        // 3. Appel des méthodes de base [cite: 191]
+        // 3. Instanciation d'une réservation
+        Reservation reservation1 = new Reservation(1, etudiant1, repas1);
+
+        // 4. Appel des méthodes de base [cite: 191]
         System.out.println("--- Profil Étudiant ---");
         etudiant1.afficherProfil();
 
         System.out.println("\n--- Menu Disponible ---");
         repas1.afficherRepas();
+
+        System.out.println("\n--- Réservation ---");
+        reservation1.afficherDetails();
+        boolean validee = reservation1.validerReservation();
+        if (validee) {
+            System.out.println("Réservation confirmée !");
+        }
 
         System.out.println("\n--- Simulation de Commande ---");
         etudiant1.rechargerSolde(10.0);

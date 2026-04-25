@@ -1,0 +1,23 @@
+actor "Étudiant" as U
+participant "Main" as M
+participant "uneReservation:Reservation" as R
+participant "unRepas:Repas" as P
+
+U -> M : Clique sur "Réserver"
+activate M
+
+M -> R : validerReservation()
+activate R
+
+R -> P : getQuantiteStock()
+activate P
+P --> R : stock disponible
+deactivate P
+
+R -> R : mettreAJourStatut("Confirmée")
+R --> M : confirmation (true)
+deactivate R
+
+M --> U : Affiche "Réservation réussie"
+deactivate M
+@enduml

@@ -7,7 +7,7 @@ import java.util.List;
  * ajouterMenu.java - Classe utilitaire pour gérer un menu de repas EcoEat.
  */
 public class ajouterMenu {
---    private final List<Repas> menu;
+    private final List<Repas> menu;
 
     public ajouterMenu() {
         this.menu = new ArrayList<>();

@@ -1,0 +1,57 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+
+package "com.ecoeat.models" {
+
+    class Utilisateur <<abstract>> {
+        - String id
+        - String nom
+        - String email
+        + seConnecter(): boolean
+    }
+
+    class Etudiant {
+        - double solde
+        + rechargerSolde(montant: double): void
+        + getSolde(): double
+    }
+
+    class Repas {
+        - int idRepas
+        - String nom
+        - double prix
+        - int quantiteStock
+        + diminuerStock(): void
+        + getQuantiteStock(): int
+    }
+
+    class Reservation {
+        - int idReservation
+        - String date
+        - String statut
+        + validerReservation(): boolean
+        + annuler(): void
+    }
+
+    class Admin {
+        - String role
+        + genererRapportVentes(): void
+        + consulterAvis(): void
+    }
+
+    class Avis {
+        - int note
+        - String commentaire
+        + enregistrer(): void
+    }
+
+    ' Relations et Associations
+    Utilisateur <|-- Etudiant : "Héritage"
+    Etudiant "1" -- "0..*" Reservation : "effectue"
+    Reservation "*" -- "1" Repas : "concerne"
+    Etudiant "1" -- "*" Avis : "rédige"
+    Repas "1" -- "*" Avis : "reçoit"
+    Admin "1" -- "*" Reservation : "supervise"
+}
+@enduml

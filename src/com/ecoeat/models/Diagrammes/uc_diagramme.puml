@@ -4,16 +4,25 @@ skinparam actorStyle awesome
 
 actor "Étudiant" as ET
 actor "Administrateur" as AD
+actor "Système EcoEat (Application)" as SE
+actor "Conducteur/Livreur" as CL
+actor "Banque/Service de paiement" as BP
 
 package "Système EcoEat" {
   usecase "Effectuer une Réservation" as UC1
   usecase "Consulter l'Historique" as UC2
   usecase "Gérer les Utilisateurs" as UC3
   usecase "Consulter les Statistiques (Dashboard)" as UC4
+  usecase "Traiter le Paiement" as UC5
+  usecase "Livrer le Repas" as UC6
 }
 
 ET --> UC1
 ET --> UC2
 AD --> UC3
 AD --> UC4
+SE --> UC1 : <<include>>
+SE --> UC5 : <<include>>
+BP --> UC5
+CL --> UC6
 @enduml

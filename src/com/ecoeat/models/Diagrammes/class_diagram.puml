@@ -1,30 +1,30 @@
 @startuml
 package com.ecoeat.models {
     class Reservation {
-        
-int idReservation
-String statut
-String date+ validerReservation(): boolean+ annulerReservation(): void+ afficherDetails(): void,
-},
-,
+        +int idReservation
+        +String statut
+        +String date
+        +validerReservation(): boolean
+        +annulerReservation(): void
+        +afficherDetails(): void
+    }
 
     class Admin {
-        
-String idAdmin
-String role+ genererRapportVentes(): void+ gererStock(): void},
-,
+        +String idAdmin
+        +String role
+        +genererRapportVentes(): void
+        +gererStock(): void
+    }
 
     class Etudiant {
-        
-String nom
-double solde},
-,
+        +String nom
+        +double solde
+    }
 
     class Repas {
-        
-String nom
-double prix},
-,
+        +String nom
+        +double prix
+    }
 
     ' Relationships
     Reservation "many" -- "1" Etudiant : "est faite par"

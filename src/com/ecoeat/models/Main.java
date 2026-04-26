@@ -35,6 +35,11 @@ public class Main {
         etudiant1.rechargerSolde(10.0);
         System.out.println("Nouveau solde : " + etudiant1.getSolde() + " DT");
 
+        // 5. Notation du repas par l'étudiant
+        noterPlat gestionNotes = new noterPlat();
+        gestionNotes.noterRepas(etudiant1, repas1, 5, "Délicieux et bien équilibré !");
+        gestionNotes.afficherNotesRepas(repas1);
+
         System.out.println("\n✅ Prototype V1 opérationnel.");
     }
 }

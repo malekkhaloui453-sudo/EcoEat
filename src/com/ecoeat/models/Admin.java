@@ -8,6 +8,10 @@ package com.ecoeat.models;
  * Admin.java - Classe représentant un administrateur du système EcoEat
  * Responsable de la gestion des repas, réservations et avis
  */
+/**
+ * Admin.java - Classe représentant un administrateur du système EcoEat
+ * Responsable de la gestion des repas, réservations et avis
+ */
 public class Admin {
     // Champs privés (Encapsulation)
     private int idAdmin;
